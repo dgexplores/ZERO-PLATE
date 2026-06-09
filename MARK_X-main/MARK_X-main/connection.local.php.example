@@ -1,0 +1,14 @@
+<?php
+/**
+ * Copy to connection.local.php and set values for your server (local or production).
+ * connection.local.php is gitignored — do not commit secrets.
+ *
+ *   copy connection.local.php.example connection.local.php
+ */
+return [
+    'host' => 'localhost',
+    'user' => 'root',
+    'password' => '',
+    'database' => 'demo',
+    // 'port' => 3306,  // optional; omit for default MySQL port
+];

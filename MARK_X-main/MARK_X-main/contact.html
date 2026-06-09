@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ZeroPLATE</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<link rel="stylesheet" href="chatbot/chatbot.css">
+	<style>
+        .notification-bell {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .notification-bell i {
+            font-size: 24px;
+            color: #06C167;
+        }
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .notification-panel {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 350px;
+            max-height: 500px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            overflow-y: auto;
+        }
+        .notification-panel.active {
+            display: block;
+        }
+        .notification-header {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .notification-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .notification-item:hover {
+            background: #f5f5f5;
+        }
+        .notification-item.new {
+            background: #e8f5e9;
+        }
+    </style>
+
+</head>
+
+
+<body>
+	<header>
+        <div class="logo">Food <b style="color: #06C167;">Donate</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html" >Home</a></li>
+                <li><a href="about.html" >About</a></li>
+                <li> <a href="contact.html" class="active">Contact</a> </li>
+                <li><a href="receiver_portal.html">Receiver Portal</a></li>
+                <li><a href="profile.php" >Profile</a></li>
+                <li>
+                    <div class="notification-bell" id="notificationBell" role="button" tabindex="0" aria-label="Notifications" aria-expanded="false" aria-controls="notificationPanel" onclick="toggleNotifications()">
+                        <i class="uil uil-bell" aria-hidden="true"></i>
+                        <span class="notification-badge" id="notificationBadge" style="display: none;">0</span>
+                    </div>
+                </li>
+                <li><a href="logout.php" >Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notificationPanel" role="region" aria-label="Notifications list">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button type="button" onclick="toggleNotifications()" aria-label="Close notifications" style="cursor: pointer; border: none; background: none; font-size: 1.2rem;">✕</button>
+        </div>
+        <div id="notificationList">
+            <!-- Notifications will be loaded here -->
+        </div>
+    </div>
+    <script>
+        hamburger=document.querySelector(".hamburger");
+        hamburger.onclick =function(){
+            navBar=document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+    <section class="cover" >
+        
+    </section>
+	<p class="heading" style=" margin: 20px;">contact us </p>
+    
+     
+	
+   <!-- <h1 class="heading">Contact Us</h1>  -->
+   <div class="contact-form"> 
+   <form action="feedback.php" method="post"> 
+     <label for="name">Name:</label> 
+     <input type="text" id="name" name="name" required>
+     <br> 
+     <label for="email">Email:</label> 
+     <input type="email" id="email" name="email" required>
+     <br> 
+     <label for="category">Feedback Category:</label>
+     <select id="category" name="category" required style="padding: 8px; width: 100%; margin: 5px 0;">
+       <option value="general">General Feedback</option>
+       <option value="donation">Donation Process</option>
+       <option value="delivery">Delivery Service</option>
+       <option value="website">Website/App</option>
+       <option value="support">Customer Support</option>
+       <option value="suggestion">Suggestion</option>
+       <option value="complaint">Complaint</option>
+     </select>
+     <br>
+     <label for="rating">Rating (1-5):</label>
+     <div style="margin: 10px 0;">
+       <input type="radio" id="rating1" name="rating" value="1" required>
+       <label for="rating1">1 ⭐</label>
+       <input type="radio" id="rating2" name="rating" value="2">
+       <label for="rating2">2 ⭐⭐</label>
+       <input type="radio" id="rating3" name="rating" value="3">
+       <label for="rating3">3 ⭐⭐⭐</label>
+       <input type="radio" id="rating4" name="rating" value="4">
+       <label for="rating4">4 ⭐⭐⭐⭐</label>
+       <input type="radio" id="rating5" name="rating" value="5">
+       <label for="rating5">5 ⭐⭐⭐⭐⭐</label>
+     </div>
+     <br> 
+     <label for="message">Message:</label> 
+     <textarea id="message" name="message" required placeholder="Please provide detailed feedback..."></textarea>
+     <br> 
+     <input type="submit" value="Send Feedback" name="feedback" style="background: #06C167; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;"> 
+    </form> 
+   </div> 
+   <div class="contact-info" style="padding: 10px;"> 
+    <p>Email: fooddonate@gmail.com</p> 
+    <p>Phone: (+91) 1234567890</p> 
+    <p>Address: Shri Ram Murti Smarak College of Engineering & Technology (SRMS CET), Bareilly, Uttar Pradesh</p> 
+    <p><a href="receiver_portal.html" style="color:#06C167;font-weight:bold;">Receiver Portal (NGO / Processor)</a></p>
+   </div> 
+ 
+
+  <div class="chatbot" style="padding: 30px; background-color: rgba(151, 243, 199, 0.5);">
+ <p style="font-size: 23px; text-align: center;">Chat support <i class="uil uil-robot" style="font-size:28px;vertical-align:middle;color:#06C167;" aria-hidden="true"></i></p>
+
+	
+ <div id="container" class="container">
+    
+
+		<div id="chat" class="chat">
+			<div id="messages" class="messages"></div>
+			<input id="input" type="text" placeholder="Say something..." autocomplete="off" />
+		</div>
+       
+	</div>
+  <div class="help">
+    <p style="font-size: 23px; text-align: center; padding:10px;">Help & FAQs?</p>
+
+<button class="accordion">how to donate food ?</button>
+<div class="panel">
+  <p>1)click on <a href="fooddonateform.php">donate</a> in home page </p>
+  <p>2)fill the details </p>
+  <p>3)click on submit</p>
+ <img src="img/mobile.jpg" alt="" width="100%">
+</div>
+
+<button class="accordion">How will my donation be used?</button>
+<div class="panel">
+  <p style="padding: 10px;"> Your donation will be used to support our mission and the various programs and initiatives that we have in place. Your donation will help us to continue providing assistance and support to those in need. You can find more information about our programs and initiatives on our website. If you have any specific questions or concerns, please feel free to contact us</p>
+</div>
+
+<button class="accordion">What should I do if my food donation is near or past its expiration date?</button>
+<div class="panel">
+  <p style="padding: 10px;">We appreciate your willingness to donate, but to ensure the safety of our clients we can't accept food that is near or past its expiration date. We recommend checking expiration dates before making a donation or contact us for further guidance</p>
+  
+</div>
+  </div>
+
+  </div>
+ 
+    
+</body>
+<script>window.MARK16_AI_CHAT_URL = "api/chat.php";</script>
+<script type="text/javascript" src="chatbot/chatbot.js" ></script>
+<script type="text/javascript" src="chatbot/constants.js" ></script> 
+<script type="text/javascript" src="chatbot/speech.js" ></script>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {  
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+    <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+    <script>
+        setInterval(function() {
+            checkForUpdates();
+        }, 10000);
+
+        function checkForUpdates() {
+            fetch('check_user_updates.php')
+                .then(response => response.json())
+                .then(data => {
+                    if(data.notificationCount > 0) {
+                        document.getElementById('notificationBadge').textContent = data.notificationCount;
+                        document.getElementById('notificationBadge').style.display = 'flex';
+                        loadNotifications();
+                    } else {
+                        document.getElementById('notificationBadge').style.display = 'none';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function loadNotifications() {
+            fetch('get_user_notifications.php')
+                .then(response => response.json())
+                .then(data => {
+                    const notificationList = document.getElementById('notificationList');
+                    notificationList.innerHTML = '';
+                    if(data.notifications.length === 0) {
+                        notificationList.innerHTML = '<div style="padding: 20px; text-align: center; color: #666;">No new notifications</div>';
+                    } else {
+                        data.notifications.forEach(notif => {
+                            const item = document.createElement('div');
+                            item.className = 'notification-item' + (notif.isNew ? ' new' : '');
+                            item.innerHTML = `
+                                <div style="font-weight: bold; margin-bottom: 5px;">${notif.title}</div>
+                                <div style="font-size: 12px; color: #666;">${notif.message}</div>
+                                <div style="font-size: 11px; color: #999; margin-top: 5px;">${notif.time}</div>
+                            `;
+                            notificationList.appendChild(item);
+                        });
+                    }
+                });
+        }
+
+        function toggleNotifications() {
+            const panel = document.getElementById('notificationPanel');
+            const bell = document.getElementById('notificationBell');
+            panel.classList.toggle('active');
+            const open = panel.classList.contains('active');
+            if (bell) bell.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if(open) {
+                loadNotifications();
+            }
+        }
+
+        document.getElementById('notificationBell')?.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleNotifications();
+            }
+        });
+
+        checkForUpdates();
+    </script>
+
+</html>

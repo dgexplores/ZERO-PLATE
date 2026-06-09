@@ -1,0 +1,19 @@
+<?php
+/**
+ * This project uses a single connection.php at the project root.
+ *
+ * Quick start (XAMPP):
+ *   - Defaults in connection.php match root / empty password / database "demo"
+ *   - Import database/database/demo.sql into MySQL
+ *
+ * Production or custom credentials (recommended):
+ *   1) copy connection.local.php.example to connection.local.php
+ *   2) edit the returned array (host, user, password, database, port)
+ *
+ * Or set environment variables (e.g. in Apache SetEnv or hosting panel):
+ *   MARK16_DB_HOST, MARK16_DB_USER, MARK16_DB_PASSWORD, MARK16_DB_NAME, MARK16_DB_PORT
+ *
+ * The real connection.php is maintained in the repo with safe defaults;
+ * override via connection.local.php or env on each environment.
+ */
+// See connection.php in the repo for the full implementation.
