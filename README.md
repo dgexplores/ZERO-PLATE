@@ -464,4 +464,5 @@ For issues, questions, or contributions:
 **⭐ If you find this project helpful, please give it a star on GitHub!**
 
 **📌 Remember:** This is a PHP application and requires a PHP-enabled server. GitHub Pages will NOT work. Use free PHP hosting services or local development with XAMPP.
+For any qureies you can reach me out on - deepaklearn7878@gmail.com
 
