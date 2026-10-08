@@ -29,6 +29,14 @@ A comprehensive web-based system designed to collect excess/leftover food from d
 
 ZeroPLATE is a multi-role platform that efficiently manages food donations and surplus sales from listing to delivery. The system connects donors/restaurants with NGOs/processors and delivery partners to ensure food reaches the right destination on time.
 
+## 60-second brief
+
+Food recovery marketplace: donors list surplus food, NGOs/processors claim it, delivery partners fulfil pickup and drop. Stack: PHP 7.4+ on Apache, MySQL/MariaDB, plain HTML/CSS/JS. No CI workflows and no live demo in this repo.
+
+| | |
+|---|---|
+| Code | [`MARK_X-main/`](MARK_X-main/) — app source (admin, delivery, org, chatbot, API) |
+
 ## ✨ Features
 
 - **Mobile Responsive Design** - Works seamlessly on all devices
@@ -98,7 +106,7 @@ The Delivery Person module for pickup and delivery services:
 
 1. **Clone or Download the Repository**
    ```bash
-   git clone https://github.com/yourusername/food-waste-management.git
+    git clone https://github.com/dgexplores/ZERO-PLATE.git
    ```
    Or download the ZIP file and extract it.
 
@@ -175,7 +183,7 @@ Use GitHub to store and version control your code, but host it elsewhere:
    git add .
    git commit -m "Initial commit: Food Waste Management System"
    git branch -M main
-   git remote add origin https://github.com/yourusername/food-waste-management.git
+    git remote add origin https://github.com/dgexplores/ZERO-PLATE.git
    git push -u origin main
    ```
 
